@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    max-width: 1700px;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    z-index: 1;
+}
+.navbar .logo {
+    height: 50%;
+}
+.navbar .logo img {
+    height: 100%;
+    object-fit: cover;
+}
+.navbar .menu {
+    display: block;
+    position: fixed;
+    left: -100%;
+    top: 69px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+
+    list-style: none;
+    z-index: 2;
+    padding: 3rem 0;
+    transition: 0.4s;
+}
+.navbar .menu.active {
+    left: 0%;
+}
+.navbar .menu > li {
+    padding: 20px 0px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition:all 0.4s;
+}
+
+.navbar .menu li ul {
+  
+    width: 100%;
+    list-style: none;
+    display: none;
+   opacity: 0;
+    z-index: 2;
+    
+   
+}
+
+.navbar .menu li:hover ul {
+
+   display: block;
+   opacity: 1;
+}
+.navbar .menu li a {
+    font-size: 1rem;
+    color: #fff;
+}
+.navbar .menu li ul li {
+    width: 100%;
+    padding: 1rem 0;
+    
+}
+
+.menu-btn {
+    color: #fff;
+    font-size: 1.4rem;
+}
+.menu-btn.menu-active {
+    z-index: 3;
+}
+.search-icon {
+    font-size: 1.4rem;
+    margin-left: 6rem;
+    margin-right: 15px;
+    color: #fff;
+    justify-content: flex-end;
+}
+button {
+    background: none;
+    outline: none;
+}
+@media (min-width : 910px)
+{
+    .navbar {
+        opacity: 0.5;
+    }
+    .navbar .menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: fit-content;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0; 
+        
+    }
+    .navbar .menu li {
+        padding: 10px 10px;
+    }
+    .navbar .menu li a {
+        font-size: 0.9rem;
+        color: rgb(255, 255, 255,1.5);
+    }
+    .navbar .menu li ul {
+        position: absolute;
+        width: 100%;
+        background: rgba(0,0,0,0.6);
+        list-style: none;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s;
+        margin-top: 25px;
+    }
+    
+    .navbar .menu li:hover ul {
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu-btn {
+        display: none;
+    }
+}
